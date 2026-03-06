@@ -1,0 +1,1108 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Design</title>
+    <meta
+      name="description"
+      content="Especialista em posicionamento visual, criativos de alta conversão e identidade para marcas que querem crescer e vender mais."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                orange: "#ff7800",
+                peach: "#ffd07b",
+                dark: "#191919",
+                light: "#fff0e4",
+              },
+            },
+            backgroundImage: {
+              "hero-glow":
+                "radial-gradient(circle at 50% 50%, rgba(255, 120, 0, 0.15) 0%, rgba(25, 25, 25, 0) 50%)",
+              "card-gradient":
+                "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+              "grid-pattern": `linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                                         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)`,
+            },
+            backgroundSize: {
+              grid: "40px 40px",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "float-delayed": "float 7s ease-in-out 2s infinite",
+              "pulse-glow": "pulse-glow 3s infinite",
+              shimmer: "shimmer 2.5s infinite",
+              marquee: "marquee 25s linear infinite",
+              blob: "blob 7s infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              "pulse-glow": {
+                "0%, 100%": { boxShadow: "0 0 20px rgba(124, 58, 237, 0.3)" },
+                "50%": { boxShadow: "0 0 40px rgba(124, 58, 237, 0.6)" },
+              },
+              shimmer: {
+                "100%": { transform: "translateX(100%)" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+              blob: {
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="antialiased selection:bg-brand-orange selection:text-brand-dark relative overflow-x-hidden"
+  >
+    <div
+      class="fixed inset-0 bg-grid-pattern bg-grid pointer-events-none z-0 opacity-40"
+    ></div>
+
+    <div id="spotlight"></div>
+
+    <nav
+      class="hidden md:block fixed left-0 right-0 top-0 z-50 transition-all duration-300 border-b-0"
+      id="navbar"
+    >
+      <div
+        class="max-w-4xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between relative"
+      >
+        <div class="flex items-center gap-4">
+          <a href="#" class="font-display font-bold text-xl text-brand-light">
+            pdr<span class="text-brand-orange">design</span>
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#problemas"
+            class="text-sm md:text-base text-brand-light/70 hover:text-brand-orange transition-colors"
+            >Desafios</a
+          >
+          <a
+            href="#servicos"
+            class="text-sm md:text-base text-brand-light/70 hover:text-brand-orange transition-colors"
+            >Serviços</a
+          >
+          <a
+            href="#portfolio"
+            class="text-sm md:text-base text-brand-light/70 hover:text-brand-orange transition-colors"
+            >Portfólio</a
+          >
+        </div>
+
+        <a
+          href="https://wa.me/27998533577?text=Olá, quero conversar sobre design estratégico"
+          target="_blank"
+          class="btn-shimmer hidden md:flex items-center gap-2 bg-brand-orange hover:bg-brand-peach text-brand-dark px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300"
+        >
+          <i class="fa-solid fa-phone text-sm"></i>
+          <span>Contato</span>
+        </a>
+
+        <button
+          class="md:hidden text-brand-light text-xl ml-auto"
+          onclick="toggleMobileMenu()"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-brand-dark/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden"
+    >
+      <button
+        class="absolute top-6 right-6 text-brand-light text-2xl"
+        onclick="toggleMobileMenu()"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a
+        href="#problemas"
+        class="text-2xl font-display text-brand-light"
+        onclick="toggleMobileMenu()"
+        >Desafios</a
+      >
+      <a
+        href="#servicos"
+        class="text-2xl font-display text-brand-light"
+        onclick="toggleMobileMenu()"
+        >Serviços</a
+      >
+      <a
+        href="#portfolio"
+        class="text-2xl font-display text-brand-light"
+        onclick="toggleMobileMenu()"
+        >Portfólio</a
+      >
+      <a
+        href="https://wa.me/27998533577?text=Olá, quero conversar sobre design estratégico"
+        class="btn-shimmer text-brand-orange text-xl font-bold flex items-center gap-2"
+      >
+        <i class="fa-brands fa-whatsapp"></i> Entre em contato
+      </a>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero pt-16 pb-24">
+      <div class="hero-container">
+        <!-- Decorative blobs -->
+        <div class="absolute top-20 -left-4 w-72 h-72 bg-brand-orange rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob pointer-events-none"></div>
+        <div class="absolute top-20 -right-4 w-72 h-72 bg-brand-peach rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
+
+        <!-- Hero layout -->
+        <div class="hero">
+          <!-- Left side - Text content -->
+          <div class="hero-left">
+            <div class="reveal">
+              <div class="hero-seq-badge hero-badge-original inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-brand-orange/10 border border-brand-orange/30 text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-6">
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-orange"></span>
+                </span>
+                Design estratégico
+              </div>
+
+              <img src="textos/design%20estrategico.png" alt="Design estratégico para marcas que querem crescer e vender mais" class="hero-seq-title text-title-image w-full max-w-[980px] mb-4" />
+
+              <p class="hero-seq-subtitle text-sm md:text-base text-brand-light/80 mb-8">
+                Especialista em posicionamento visual, criativos de alta conversão e identidade para marcas que querem parecer grandes.
+              </p>
+
+              <div class="hero-seq-cta flex flex-row md:flex-row items-stretch md:items-start gap-3 w-full">
+                <a href="https://wa.me/27998533577?text=Oi%2C%20tudo%20bem%3F%20tenho%20interesse%20em%20seus%20servi%C3%A7os." target="_blank" class="btn-shimmer inline-flex flex-1 md:flex-none justify-center items-center gap-2 md:gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-4 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(255,118,44,0.5)]">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Entrar em contato
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="https://phdestefanimatos.myportfolio.com" target="_blank" class="inline-flex flex-1 md:flex-none justify-center items-center gap-2 md:gap-3 border border-brand-orange/50 text-brand-light hover:bg-brand-orange/10 px-4 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300">
+                  Ver portfólio completo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side - Image -->
+          <div class="hero-right">
+            <div class="hero-seq-badge hero-badge-mobile inline-flex items-center gap-1.5 py-1 px-2 rounded-full bg-brand-orange/10 border border-brand-orange/30 text-brand-orange text-[8px] font-bold tracking-[0.15em] uppercase">
+              <span class="relative flex h-1.5 w-1.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-orange"></span>
+              </span>
+              Design estratégico
+            </div>
+            <img src="FOTO.png" alt="Design estratégico" class="hero-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROBLEM -->
+    <section id="problemas" class="py-24 relative z-10">
+      <div
+        class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-orange/10 rounded-full blur-[128px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold mb-6 text-brand-light"
+          >
+            <img src="textos/parece%20menor.png" alt="Sua marca vende, mas parece menor do que realmente é?" class="text-title-image mx-auto w-full max-w-[980px]" />
+          </h2>
+          <p class="text-sm md:text-lg text-brand-light/70 max-w-2xl mx-auto">
+            Muitas marcas perdem vendas porque sua comunicação visual não transmite
+            autoridade, organização e posicionamento profissional.
+          </p>
+        </div>
+
+        <div class="text-center mt-12 reveal delay-100">
+          <a
+            href="https://wa.me/27998533577?text=Quero melhorar minha imagem de marca"
+            target="_blank"
+            class="btn-shimmer inline-flex items-center gap-2 border border-brand-orange/50 text-brand-orange hover:bg-brand-orange/10 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+          >
+            Quero melhorar minha imagem
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT I DO -->
+    <section id="servicos" class="py-24 relative z-10">
+      <div
+        class="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-peach/10 rounded-full blur-[128px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div
+            class="holo-card bg-card-gradient border border-white/5 p-8 rounded-2xl reveal group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-brand-orange group-hover:text-brand-dark transition-all duration-300"
+            >
+              <i class="fa-solid fa-palette text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold mb-3 text-brand-light">
+              Posicionamento Visual
+            </h3>
+            <p class="text-brand-light/70 md:text-lg">
+              Identidade, rebranding e construção de autoridade.
+            </p>
+          </div>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 p-8 rounded-2xl reveal delay-100 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-brand-orange group-hover:text-brand-dark transition-all duration-300"
+            >
+              <i class="fa-solid fa-rocket text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold mb-3 text-brand-light">
+              Design para Conversão
+            </h3>
+            <p class="text-brand-light/70 md:text-lg">
+              Criativos para tráfego, banners estratégicos e campanhas.
+            </p>
+          </div>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 p-8 rounded-2xl reveal delay-200 group"
+          >
+            <div
+              class="w-12 h-12 rounded-lg bg-brand-orange/20 flex items-center justify-center text-brand-orange mb-4 group-hover:bg-brand-orange group-hover:text-brand-dark transition-all duration-300"
+            >
+              <i class="fa-solid fa-layer-group text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-display font-bold mb-3 text-brand-light">
+              Estrutura Visual E-commerce
+            </h3>
+            <p class="text-brand-light/70 md:text-lg">
+              Organização visual que aumenta percepção de valor.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center reveal delay-300">
+          <a
+            href="https://wa.me/27998533577?text=Quero estruturar minha marca"
+            target="_blank"
+            class="btn-shimmer inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Quero estruturar minha marca
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="py-24 relative z-10">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2
+          class="text-4xl md:text-5xl font-display font-bold mb-12 text-center text-brand-light reveal"
+        >
+          Como funciona
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="text-center reveal">
+            <div
+              class="w-16 h-16 rounded-full bg-brand-orange/20 border border-brand-orange/50 flex items-center justify-center text-brand-orange font-display font-bold text-2xl mx-auto mb-4"
+            >
+              1
+            </div>
+            <h4 class="text-lg font-semibold text-brand-light mb-2">
+              Diagnóstico da marca
+            </h4>
+            <p class="text-sm md:text-base text-brand-light/70">
+              Análise profunda do seu mercado e posicionamento.
+            </p>
+          </div>
+
+          <div class="text-center reveal delay-100">
+            <div
+              class="w-16 h-16 rounded-full bg-brand-orange/20 border border-brand-orange/50 flex items-center justify-center text-brand-orange font-display font-bold text-2xl mx-auto mb-4"
+            >
+              2
+            </div>
+            <h4 class="text-lg font-semibold text-brand-light mb-2">
+              Planejamento visual estratégico
+            </h4>
+            <p class="text-sm md:text-base text-brand-light/70">
+              Estrutura visual que comunica autoridade.
+            </p>
+          </div>
+
+          <div class="text-center reveal delay-200">
+            <div
+              class="w-16 h-16 rounded-full bg-brand-orange/20 border border-brand-orange/50 flex items-center justify-center text-brand-orange font-display font-bold text-2xl mx-auto mb-4"
+            >
+              3
+            </div>
+            <h4 class="text-lg font-semibold text-brand-light mb-2">
+              Execução organizada
+            </h4>
+            <p class="text-sm md:text-base text-brand-light/70">
+              Criativos, identidade e assets prontos para usar.
+            </p>
+          </div>
+
+          <div class="text-center reveal delay-300">
+            <div
+              class="w-16 h-16 rounded-full bg-brand-orange/20 border border-brand-orange/50 flex items-center justify-center text-brand-orange font-display font-bold text-2xl mx-auto mb-4"
+            >
+              4
+            </div>
+            <h4 class="text-lg font-semibold text-brand-light mb-2">
+              Acompanhamento e ajustes
+            </h4>
+            <p class="text-sm md:text-base text-brand-light/70">
+              Suporte contínuo para otimizar resultados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PLANS -->
+    <section class="py-24 relative z-10">
+      <div
+        class="absolute inset-0 -bottom-32 bg-gradient-to-t from-brand-orange/10 to-transparent blur-3xl pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h2
+          class="text-4xl md:text-5xl font-display font-bold mb-12 text-center text-brand-light reveal"
+        >
+          Planos
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div
+            class="holo-card bg-card-gradient border border-white/5 p-8 rounded-2xl reveal group"
+          >
+            <h3 class="text-2xl font-display font-bold mb-2 text-brand-light">
+              Plano Essencial
+            </h3>
+            <p class="text-brand-light/70 text-sm md:text-base mb-6">
+              Para marcas que querem presença visual constante.
+            </p>
+            <div class="space-y-3">
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ 3 artes para Feed ou Stories</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ ou 2 banners para site (até 2 formatos)</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ ou combinação equivalente de materiais</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ 10% de desconto em serviços adicionais</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ até 3 alterações por material</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">(Identidade visual à parte)</p>
+            </div>
+          </div>
+
+          <div
+            class="holo-card bg-brand-dark border border-brand-orange p-8 rounded-2xl reveal delay-100 relative transform md:-translate-y-6 shadow-[0_0_40px_rgba(255,118,44,0.15)] z-20 group"
+          >
+            <div
+              class="absolute top-0 right-0 bg-brand-orange text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-2xl"
+            >
+              POPULAR
+            </div>
+            <h3 class="text-2xl font-display font-bold mb-2 text-brand-light">
+              Plano Performance
+            </h3>
+            <p class="text-brand-light/70 text-sm md:text-base mb-6">
+              Para marcas que investem em tráfego e querem escalar.
+            </p>
+            <div class="space-y-3">
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ Até 6 criativos estáticos (Feed ou Stories)</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ ou combinação com banners para site</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ 1 motion simples por mês (até 3 páginas)</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ suporte estratégico para campanhas</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ consultoria rápida 2x no mês</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ prioridade na fila de produção</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">(Identidade visual à parte)</p>
+            </div>
+          </div>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 p-8 rounded-2xl reveal delay-200 group"
+          >
+            <h3 class="text-2xl font-display font-bold mb-2 text-brand-light">
+              Plano Autoridade
+            </h3>
+            <p class="text-brand-light/70 text-sm md:text-base mb-6">
+              Para marcas que querem dominar o mercado.
+            </p>
+            <div class="space-y-3">
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ Até 10 criativos mensais</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ combinação livre entre artes, banners e motion</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ até 2 motions por mês (até 5 páginas)</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ suporte estratégico contínuo</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ consultoria semanal</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">✔️ prioridade máxima nas demandas.</p>
+              <p class="plan-item text-[11px] md:text-base leading-relaxed md:leading-normal text-brand-light/70">(Identidade visual à parte)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center reveal delay-300">
+          <p class="text-sm md:text-base text-brand-light/70 mb-6 max-w-3xl mx-auto">
+            Os planos oferecem economia média de 10% a 30% em comparação aos serviços avulsos.
+          </p>
+          <a
+            href="https://wa.me/27998533577?text=Quero falar sobre os planos"
+            target="_blank"
+            class="btn-shimmer inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar sobre planos no WhatsApp
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ONE-OFF PROJECTS -->
+    <section class="py-24 relative z-10">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold mb-6 text-brand-light"
+          >
+            <picture>
+              <source media="(max-width: 768px)" srcset="textos/t%C3%ADtulo-3-mobile.png" />
+              <img src="textos/projeto%20especifico.png" alt="Precisa de um projeto específico?" class="text-title-image mx-auto w-full max-w-[980px]" />
+            </picture>
+          </h2>
+          <p class="text-sm md:text-lg text-brand-light/70 max-w-2xl mx-auto">
+            Também realizo projetos pontuais para marcas que já possuem estrutura e
+            precisam de execução estratégica.
+          </p>
+        </div>
+
+        <div
+          class="bg-card-gradient border border-white/5 p-8 md:p-12 rounded-2xl mb-12 reveal delay-100"
+        >
+          <div class="mb-8">
+            <h4 class="font-display font-bold text-brand-light text-xl mb-4">
+              Serviços pontuais:
+            </h4>
+            <ul class="space-y-2 text-brand-light/70">
+              <li>✔️ Identidade visual</li>
+              <li>✔️ Criativos para campanhas específicas</li>
+              <li>✔️ Banners para e-commerce</li>
+              <li>✔️ Motion para lançamento</li>
+              <li>✔️ Ajustes e atualizações visuais</li>
+            </ul>
+          </div>
+
+          <div class="mb-8 pt-8 border-t border-white/10">
+            <h4 class="font-display font-bold text-brand-light text-xl mb-4">
+              💬 Como funciona:
+            </h4>
+            <ol class="space-y-2 text-brand-light/70">
+              <li>1. Briefing estruturado</li>
+              <li>2. Prazo definido</li>
+              <li>3. Entrega organizada</li>
+              <li>4. Alterações limitadas ao escopo</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="text-center reveal delay-200">
+          <a
+            href="https://wa.me/27998533577?text=Olá, quero solicitar orçamento para um projeto pontual."
+            target="_blank"
+            class="btn-shimmer inline-flex items-center gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Solicitar orçamento pontual
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FEATURED PROJECTS (Portfolio) -->
+    <section id="portfolio" class="py-24 relative z-10">
+      <div
+        class="absolute inset-0 -bottom-32 bg-gradient-to-b from-transparent to-brand-orange/10 blur-3xl pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <h2
+          class="text-4xl md:text-5xl font-display font-bold mb-12 text-center text-brand-light reveal"
+        >
+          PROJETOS EM DESTAQUE
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <a
+            href="https://phdestefanimatos.myportfolio.com/social-media-design-loja-de-roupas"
+            target="_blank"
+            class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal group block"
+          >
+            <div class="aspect-video overflow-hidden rounded-t-2xl relative">
+              <iframe
+                src="https://www.behance.net/embed/project/245023775?ilo0=1"
+                title="Projeto Behance 245023775"
+                class="w-full h-full pointer-events-none"
+                allowfullscreen
+                loading="lazy"
+                frameborder="0"
+                scrolling="no"
+                allow="clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+            <div class="p-6">
+              <h4 class="font-display font-bold text-brand-light mb-2">
+                Estrutura de E-commerce
+              </h4>
+              <p class="text-sm md:text-lg text-brand-light/70">
+              Reorganização visual que aumentou ticket médio em 29%.
+              </p>
+            </div>
+          </a>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal delay-100 group"
+          >
+            <a
+              href="https://phdestefanimatos.myportfolio.com/social-media-design-loja-de-roupas-1"
+              target="_blank"
+              class="block aspect-video overflow-hidden rounded-t-2xl"
+            >
+              <iframe
+                src="https://www.behance.net/embed/project/245024745?ilo0=1"
+                title="Projeto Behance 245024745"
+                class="w-full h-full pointer-events-none"
+                allowfullscreen
+                loading="lazy"
+                frameborder="0"
+                scrolling="no"
+                allow="clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </a>
+            <div class="p-6">
+              <h4 class="font-display font-bold text-brand-light mb-2">
+                Identidade Visual Premium
+              </h4>
+              <p class="text-sm md:text-lg text-brand-light/70">
+                Identidade visual pensada para alcançar o público comprador.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal delay-200 group"
+          >
+            <a
+              href="https://phdestefanimatos.myportfolio.com/guerino-prefeito-campanha-politica"
+              target="_blank"
+              class="block aspect-video overflow-hidden rounded-t-2xl"
+            >
+              <iframe
+                src="https://www.behance.net/embed/project/209690603?ilo0=1"
+                title="Projeto Behance 209690603"
+                class="w-full h-full pointer-events-none"
+                allowfullscreen
+                loading="lazy"
+                frameborder="0"
+                scrolling="no"
+                allow="clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </a>
+            <div class="p-6">
+              <h4 class="font-display font-bold text-brand-light mb-2">
+                Identidade para campanha eleitoral
+              </h4>
+              <p class="text-sm md:text-lg text-brand-light/70">
+                Identidade visual completa e Criativos que aumentaram a credibilidade do candidato.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal delay-300 group"
+          >
+            <a href="https://phdestefanimatos.myportfolio.com/social-media-loja-de-roupas" target="_blank" class="block aspect-video overflow-hidden rounded-t-2xl">
+              <iframe
+                src="https://www.behance.net/embed/project/245289405?ilo0=1"
+                title="Projeto Behance Campanha de Lançamento"
+                class="w-full h-full pointer-events-none"
+                allowfullscreen
+                loading="lazy"
+                frameborder="0"
+                scrolling="no"
+                allow="clipboard-write"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </a>
+            <div class="p-6">
+              <h4 class="font-display font-bold text-brand-light mb-2">
+                Campanha de Lançamento
+              </h4>
+              <p class="text-sm md:text-lg text-brand-light/70">
+                Estrutura para E-commerce e criativos que aumentaram a taxa de retenção.
+              </p>
+            </div>
+          </div>
+
+          <div id="portfolio-scroll" class="col-span-1 md:col-span-2 rounded-2xl overflow-hidden border border-brand-orange/40 bg-brand-dark/40" style="display: none;">
+            <img src="PORTF%C3%93LIO-1.png" alt="Portfólio 1 completo" class="w-full h-auto object-contain" />
+          </div>
+        </div>
+
+        <div class="text-center reveal delay-400">
+          <a
+            href="https://phdestefanimatos.myportfolio.com"
+            target="_blank"
+            class="inline-flex items-center gap-2 border border-brand-orange/50 text-brand-light hover:bg-brand-orange/10 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+          >
+            Ver portfólio completo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: WHO IT'S FOR -->
+
+      <!-- SECTION: MOTION DESIGN (aba) -->
+      <section id="motion-design" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+          <div class="mb-10">
+            <img src="textos/motion.png" alt="Motion Design" class="text-title-image mx-auto w-full max-w-[980px] border-2 border-brand-orange" />
+          </div>
+          <div class="hidden md:grid md:grid-cols-3 gap-2">
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/1%20motion%20storys.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/3flyer.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/4flyer.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/flyer5%20animado.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                <source src="motion/6flyer%20lume.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div id="motion-carousel" class="md:hidden overflow-x-auto -mx-6 pb-4 hide-scrollbar" style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
+            <div id="motion-carousel-track" class="flex gap-2" style="width: max-content;">
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/1%20motion%20storys.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/3flyer.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/4flyer.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/flyer5%20animado.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+                  <source src="motion/6flyer%20lume.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <section class="py-24 relative z-10">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2
+          class="text-4xl md:text-5xl font-display font-bold mb-12 text-center text-brand-light reveal"
+        >
+          PARA QUEM É
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="reveal">
+            <h4 class="text-xl font-display font-bold text-brand-light mb-6">
+              Trabalho com:
+            </h4>
+            <ul class="space-y-3 text-brand-light/70">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-orange text-xl">✔️</span>
+                <span>Marcas que querem crescer</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-orange text-xl">✔️</span>
+                <span>Negócios que investem em imagem</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-orange text-xl">✔️</span>
+                <span>Empresas que buscam estrutura</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reveal delay-100">
+            <h4 class="text-xl font-display font-bold text-brand-light mb-6">
+              Não trabalho com:
+            </h4>
+            <ul class="space-y-3 text-brand-light/70">
+              <li class="flex items-start gap-3">
+                <span class="text-red-500 text-xl">✖️</span>
+                <span>Projetos pontuais sem planejamento</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500 text-xl">✖️</span>
+                <span>Quem busca apenas "uma arte rápida"</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-red-500 text-xl">✖️</span>
+                <span>Negócios sem propósito claro</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA -->
+    <section class="py-24 relative z-10">
+      <div
+        class="absolute inset-0 -top-32 bg-gradient-to-t from-brand-orange/20 to-transparent blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-orange/30 rounded-full blur-[100px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <h2
+          class="text-5xl md:text-6xl font-display font-bold mb-8 reveal text-brand-light"
+        >
+          <img src="textos/vender%20mais.png" alt="Se sua marca quer crescer, sua imagem precisa acompanhar." class="mx-auto w-full max-w-[980px]" />
+        </h2>
+        <p
+          class="text-sm md:text-lg text-brand-light/70 mb-12 reveal delay-100 max-w-2xl mx-auto"
+        >
+          Projetos personalizados, foco em resultado e posicionamento estratégico.
+        </p>
+        <div class="reveal delay-200">
+          <a
+            href="https://wa.me/27998533577?text=Olá, quero conversar sobre minha marca"
+            target="_blank"
+            class="btn-shimmer inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-10 py-5 rounded-lg text-xl font-bold transition-all duration-300 hover:scale-105 shadow-[0_0_40px_rgba(255,118,44,0.4)]"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar comigo no WhatsApp
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a
+      href="https://wa.me/27998533577?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20design%20estrat%C3%A9gico"
+      target="_blank"
+      class="btn-shimmer fixed bottom-8 right-8 z-40 bg-brand-orange hover:bg-brand-peach text-brand-dark w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-[0_0_30px_rgba(255,118,44,0.5)] hover:shadow-[0_0_50px_rgba(255,118,44,0.8)] transition-all duration-300 hover:scale-110 animate-bounce"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer class="border-t border-white/10 bg-brand-dark py-12 relative z-20">
+      <div
+        class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold text-lg text-brand-light">
+            pdr<span class="text-brand-orange">design</span>
+          </span>
+        </div>
+
+        <div class="flex gap-6 text-brand-light/70 text-sm">
+          <a
+            href="https://www.instagram.com/pdr.designn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-brand-orange transition-colors flex items-center gap-1"
+            ><i class="fa-brands fa-instagram"></i> Instagram</a
+          >
+          <a
+            href="#"
+            class="hover:text-brand-orange transition-colors"
+            >Termos</a
+          >
+          <a
+            href="#"
+            class="hover:text-brand-orange transition-colors"
+            >Privacidade</a
+          >
+        </div>
+
+        <p class="text-brand-light/50 text-xs">
+          © 2026 Design. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const spotlight = document.getElementById('spotlight');
+      let throttleTimer;
+      
+      document.addEventListener("mousemove", (e) => {
+        if (!throttleTimer) {
+          spotlight.style.setProperty("--mouse-x", `${e.clientX}px`);
+          spotlight.style.setProperty("--mouse-y", `${e.clientY}px`);
+          document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+          document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+          
+          throttleTimer = setTimeout(() => {
+            throttleTimer = null;
+          }, 16);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const revealElements = document.querySelectorAll(".reveal");
+        revealElements.forEach((el) => observer.observe(el));
+
+        const motionCarousel = document.getElementById("motion-carousel");
+        const motionTrack = document.getElementById("motion-carousel-track");
+
+        if (
+          motionCarousel &&
+          motionTrack &&
+          window.matchMedia("(max-width: 768px)").matches
+        ) {
+          motionCarousel.style.scrollBehavior = "auto";
+
+          const originalCards = Array.from(motionTrack.children);
+          originalCards.forEach((card) => {
+            motionTrack.appendChild(card.cloneNode(true));
+          });
+
+          const setupMotionVideos = () => {
+            const videos = motionTrack.querySelectorAll("video");
+            videos.forEach((video) => {
+              video.muted = true;
+              video.autoplay = true;
+              video.loop = true;
+              video.playsInline = true;
+              video.setAttribute("muted", "");
+              video.setAttribute("autoplay", "");
+              video.setAttribute("loop", "");
+              video.setAttribute("playsinline", "");
+              video.setAttribute("webkit-playsinline", "");
+              video.preload = "auto";
+
+              const playPromise = video.play();
+              if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(() => {});
+              }
+            });
+          };
+
+          setupMotionVideos();
+
+          let paused = false;
+          const pixelsPerSecond = 56;
+          let halfTrackWidth = 0;
+          let lastTimestamp = 0;
+
+          const recalculateLoopWidth = () => {
+            halfTrackWidth = motionTrack.scrollWidth / 2;
+          };
+
+          recalculateLoopWidth();
+          motionCarousel.scrollLeft = 0;
+
+          const loopMotionCarousel = (timestamp) => {
+            if (!lastTimestamp) {
+              lastTimestamp = timestamp;
+            }
+
+            const deltaTime = Math.min(timestamp - lastTimestamp, 32);
+            lastTimestamp = timestamp;
+
+            if (!paused && halfTrackWidth > 0) {
+              motionCarousel.scrollLeft += (pixelsPerSecond * deltaTime) / 1000;
+
+              if (motionCarousel.scrollLeft >= halfTrackWidth) {
+                motionCarousel.scrollLeft -= halfTrackWidth;
+              }
+            }
+
+            requestAnimationFrame(loopMotionCarousel);
+          };
+
+          window.addEventListener("resize", recalculateLoopWidth);
+
+          motionCarousel.addEventListener("touchstart", () => {
+            paused = true;
+          }, { passive: true });
+
+          motionCarousel.addEventListener("touchmove", () => {
+            paused = true;
+          }, { passive: true });
+
+          motionCarousel.addEventListener("touchend", () => {
+            setTimeout(() => {
+              paused = false;
+              setupMotionVideos();
+            }, 800);
+          }, { passive: true });
+
+          motionCarousel.addEventListener("mouseenter", () => {
+            paused = true;
+          });
+
+          motionCarousel.addEventListener("mouseleave", () => {
+            paused = false;
+            setupMotionVideos();
+          });
+
+          document.addEventListener("visibilitychange", () => {
+            if (!document.hidden) {
+              setupMotionVideos();
+            }
+          });
+
+          requestAnimationFrame(loopMotionCarousel);
+        }
+      });
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        if (menu.classList.contains("translate-x-full")) {
+          menu.classList.remove("translate-x-full");
+        } else {
+          menu.classList.add("translate-x-full");
+        }
+      }
+
+      function togglePortfolioScroll() {
+        const panel = document.getElementById("portfolio-scroll");
+        const isHidden = panel.style.display === "none" || panel.style.display === "";
+
+        if (isHidden) {
+          panel.style.display = "block";
+          setTimeout(() => {
+            panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 50);
+          return;
+        }
+
+        panel.style.display = "none";
+      }
+
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "bg-brand-dark/95",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/5",
+            "shadow-lg"
+          );
+          nav.classList.remove("border-b-0");
+        } else {
+          nav.classList.remove(
+            "bg-brand-dark/95",
+            "backdrop-blur-xl",
+            "border-b",
+            "border-white/5",
+            "shadow-lg"
+          );
+          nav.classList.add("border-b-0");
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
