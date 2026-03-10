@@ -509,6 +509,35 @@ body::before {
   overflow-x: visible;
 }
 
+/* Otimizações para Desktop */
+@media (min-width: 769px) {
+  /* Reduzir blur effects em decorative elements */
+  [class*="blur-"] {
+    filter: blur(20px) !important;
+  }
+  
+  /* Limitar raios de gradientes */
+  [class*="rounded-full"] {
+    filter: drop-shadow(0 0 40px rgba(255, 120, 0, 0.1));
+  }
+  
+  /* Otimizar animações de reveal */
+  .reveal {
+    transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  
+  /* Reduzir animação de shimmer */
+  .btn-shimmer::after {
+    animation: shimmer 4s infinite;
+  }
+  
+  /* Desabilitar hover effects em elementos muito pesados */
+  .holo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 120, 0, 0.15);
+  }
+}
+
 #marquee.paused {
   animation-play-state: paused;
 }

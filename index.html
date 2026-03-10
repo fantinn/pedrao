@@ -583,17 +583,7 @@
             class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal group block"
           >
             <div class="aspect-video overflow-hidden rounded-t-2xl relative">
-              <iframe
-                src="https://www.behance.net/embed/project/245023775?ilo0=1"
-                title="Projeto Behance 245023775"
-                class="w-full h-full pointer-events-none"
-                allowfullscreen
-                loading="lazy"
-                frameborder="0"
-                scrolling="no"
-                allow="clipboard-write"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+              <img src="capas/CAPA-1.jpg" alt="Estrutura de E-commerce" class="w-full h-full object-cover" loading="lazy" />
             </div>
             <div class="p-6">
               <h4 class="font-display font-bold text-brand-light mb-2">
@@ -613,17 +603,7 @@
               target="_blank"
               class="block aspect-video overflow-hidden rounded-t-2xl"
             >
-              <iframe
-                src="https://www.behance.net/embed/project/245024745?ilo0=1"
-                title="Projeto Behance 245024745"
-                class="w-full h-full pointer-events-none"
-                allowfullscreen
-                loading="lazy"
-                frameborder="0"
-                scrolling="no"
-                allow="clipboard-write"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+              <img src="capas/CAPA-2.jpg" alt="Identidade Visual Premium" class="w-full h-full object-cover" loading="lazy" />
             </a>
             <div class="p-6">
               <h4 class="font-display font-bold text-brand-light mb-2">
@@ -643,17 +623,7 @@
               target="_blank"
               class="block aspect-video overflow-hidden rounded-t-2xl"
             >
-              <iframe
-                src="https://www.behance.net/embed/project/209690603?ilo0=1"
-                title="Projeto Behance 209690603"
-                class="w-full h-full pointer-events-none"
-                allowfullscreen
-                loading="lazy"
-                frameborder="0"
-                scrolling="no"
-                allow="clipboard-write"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+              <img src="capas/CAPA-3.jpg" alt="Identidade para campanha eleitoral" class="w-full h-full object-cover" loading="lazy" />
             </a>
             <div class="p-6">
               <h4 class="font-display font-bold text-brand-light mb-2">
@@ -669,17 +639,7 @@
             class="holo-card bg-card-gradient border border-white/5 rounded-2xl overflow-hidden reveal delay-300 group"
           >
             <a href="https://phdestefanimatos.myportfolio.com/social-media-loja-de-roupas" target="_blank" class="block aspect-video overflow-hidden rounded-t-2xl">
-              <iframe
-                src="https://www.behance.net/embed/project/245289405?ilo0=1"
-                title="Projeto Behance Campanha de Lançamento"
-                class="w-full h-full pointer-events-none"
-                allowfullscreen
-                loading="lazy"
-                frameborder="0"
-                scrolling="no"
-                allow="clipboard-write"
-                referrerpolicy="strict-origin-when-cross-origin"
-              ></iframe>
+              <img src="capas/capa-5-.jpg" alt="Campanha de Lançamento" class="w-full h-full object-cover" loading="lazy" />
             </a>
             <div class="p-6">
               <h4 class="font-display font-bold text-brand-light mb-2">
@@ -718,27 +678,27 @@
           </div>
           <div class="hidden md:grid md:grid-cols-3 gap-2">
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/1%20motion%20storys.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/1%20motion%20storys.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/3flyer.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/3flyer.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/4flyer.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/4flyer.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/flyer5%20animado.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/flyer5%20animado.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/6flyer%20lume.mp4">
+              <video class="w-full h-full object-cover" muted loop playsinline data-src="motion/6flyer%20lume.mp4">
               </video>
             </div>
           </div>
@@ -954,8 +914,8 @@
         
         // Intersection Observer para vídeos desktop
         const videoObserverOptions = {
-          threshold: 0.1,
-          rootMargin: "500px",
+          threshold: 0.05,  // Reduzido para carregar mais cedo
+          rootMargin: "800px",  // Aumentado para pré-carregar muito antes
         };
         
         const videoObserver = new IntersectionObserver((entries) => {
