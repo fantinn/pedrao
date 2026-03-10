@@ -93,8 +93,6 @@
       class="fixed inset-0 bg-grid-pattern bg-grid pointer-events-none z-0 opacity-40"
     ></div>
 
-    <div id="spotlight"></div>
-
     <nav
       class="hidden md:block fixed left-0 right-0 top-0 z-50 transition-all duration-300 border-b-0"
       id="navbar"
@@ -183,10 +181,6 @@
     <!-- SECTION 1: HERO -->
     <section class="hero pt-16 pb-24">
       <div class="hero-container">
-        <!-- Decorative blobs -->
-        <div class="absolute top-20 -left-4 w-72 h-72 bg-brand-orange rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob pointer-events-none"></div>
-        <div class="absolute top-20 -right-4 w-72 h-72 bg-brand-peach rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
-
         <!-- Hero layout -->
         <div class="hero">
           <!-- Left side - Text content -->
@@ -207,7 +201,7 @@
               </p>
 
               <div class="hero-seq-cta flex flex-row md:flex-row items-stretch md:items-start gap-3 w-full">
-                <a href="https://wa.me/27998533577?text=Oi%2C%20tudo%20bem%3F%20tenho%20interesse%20em%20seus%20servi%C3%A7os." target="_blank" class="btn-shimmer inline-flex flex-1 md:flex-none justify-center items-center gap-2 md:gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-4 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-[0_0_30px_rgba(255,118,44,0.5)]">
+                <a href="https://wa.me/27998533577?text=Oi%2C%20tudo%20bem%3F%20tenho%20interesse%20em%20seus%20servi%C3%A7os." target="_blank" class="btn-shimmer inline-flex flex-1 md:flex-none justify-center items-center gap-2 md:gap-3 bg-brand-orange hover:bg-brand-peach text-brand-dark px-4 md:px-8 py-3 md:py-4 rounded-lg text-sm md:text-lg font-semibold transition-all duration-300 hover:scale-105">
                   <i class="fa-brands fa-whatsapp"></i>
                   Entrar em contato
                   <i class="fa-solid fa-arrow-right"></i>
@@ -237,10 +231,6 @@
 
     <!-- SECTION 2: PROBLEM -->
     <section id="problemas" class="py-24 relative z-10">
-      <div
-        class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-orange/10 rounded-full blur-[128px] pointer-events-none"
-      ></div>
-
       <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="text-center mb-12 reveal">
           <h2
@@ -268,10 +258,6 @@
 
     <!-- SECTION 3: WHAT I DO -->
     <section id="servicos" class="py-24 relative z-10">
-      <div
-        class="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-peach/10 rounded-full blur-[128px] pointer-events-none"
-      ></div>
-
       <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div
@@ -864,21 +850,6 @@
     </footer>
 
     <script>
-      const spotlight = document.getElementById('spotlight');
-      let throttleTimer;
-      
-      document.addEventListener("mousemove", (e) => {
-        if (!throttleTimer) {
-          spotlight.style.setProperty("--mouse-x", `${e.clientX}px`);
-          spotlight.style.setProperty("--mouse-y", `${e.clientY}px`);
-          document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
-          document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
-          
-          throttleTimer = setTimeout(() => {
-            throttleTimer = null;
-          }, 16);
-        }
-      });
 
       document.addEventListener("DOMContentLoaded", () => {
         // Lazy loading para vídeos
@@ -1098,12 +1069,26 @@
         panel.style.display = "none";
       }
 
-      window.addEventListener("scroll", () => {
+      function updateDesktopNavbarState() {
         const nav = document.getElementById("navbar");
+        if (!nav) return;
+
+        const isDesktop = window.innerWidth >= 768;
+
+        if (!isDesktop) {
+          nav.classList.remove(
+            "bg-brand-dark/95",
+            "border-b",
+            "border-white/5",
+            "shadow-lg",
+            "border-b-0"
+          );
+          return;
+        }
+
         if (window.scrollY > 50) {
           nav.classList.add(
             "bg-brand-dark/95",
-            "backdrop-blur-xl",
             "border-b",
             "border-white/5",
             "shadow-lg"
@@ -1112,14 +1097,19 @@
         } else {
           nav.classList.remove(
             "bg-brand-dark/95",
-            "backdrop-blur-xl",
             "border-b",
             "border-white/5",
             "shadow-lg"
           );
           nav.classList.add("border-b-0");
         }
+      }
+
+      window.addEventListener("scroll", updateDesktopNavbarState, {
+        passive: true,
       });
+      window.addEventListener("resize", updateDesktopNavbarState);
+      window.addEventListener("load", updateDesktopNavbarState);
     </script>
   </body>
 </html>
