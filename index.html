@@ -718,66 +718,54 @@
           </div>
           <div class="hidden md:grid md:grid-cols-3 gap-2">
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/1%20motion%20storys.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/1%20motion%20storys.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/3flyer.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/3flyer.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/4flyer.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/4flyer.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/flyer5%20animado.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/flyer5%20animado.mp4">
               </video>
             </div>
             <div class="aspect-[9/16] overflow-hidden" style="background: #111010; border-radius: 12px;">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                <source src="motion/6flyer%20lume.mp4" type="video/mp4" />
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/6flyer%20lume.mp4">
               </video>
             </div>
           </div>
           <div id="motion-carousel" class="md:hidden overflow-x-auto -mx-6 pb-4 hide-scrollbar" style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
             <div id="motion-carousel-track" class="flex gap-2" style="width: max-content;">
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/1%20motion%20storys.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/1%20motion%20storys.mp4">
                 </video>
               </div>
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/BLACK%20OFFSIZE%20MOTION%20%281%29.mp4">
                 </video>
               </div>
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/3flyer.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/3flyer.mp4">
                 </video>
               </div>
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/4flyer.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/4flyer.mp4">
                 </video>
               </div>
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/flyer5%20animado.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/flyer5%20animado.mp4">
                 </video>
               </div>
               <div class="aspect-[9/16] flex-shrink-0 overflow-hidden" style="width: 200px; background: #111010; border-radius: 12px;">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
-                  <source src="motion/6flyer%20lume.mp4" type="video/mp4" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline data-src="motion/6flyer%20lume.mp4">
                 </video>
               </div>
             </div>
@@ -933,6 +921,75 @@
       });
 
       document.addEventListener("DOMContentLoaded", () => {
+        // Lazy loading para vídeos
+        const allVideos = document.querySelectorAll("video");
+        const videoSources = new Map();
+        
+        // Guardar todas as sources (de source tags ou data-src)
+        allVideos.forEach((video) => {
+          const source = video.querySelector("source");
+          const dataSrc = video.getAttribute("data-src");
+          
+          if (source) {
+            videoSources.set(video, source.src);
+            source.remove();
+          } else if (dataSrc) {
+            videoSources.set(video, dataSrc);
+          }
+        });
+        
+        // Carregar todos os vídeos do carousel mobile imediatamente
+        const motionTrackVideos = document.querySelectorAll("#motion-carousel-track video");
+        motionTrackVideos.forEach((video) => {
+          const src = videoSources.get(video);
+          if (src) {
+            const sourceEl = document.createElement("source");
+            sourceEl.src = src;
+            sourceEl.type = "video/mp4";
+            video.appendChild(sourceEl);
+            video.load();
+            video.play().catch(() => {});
+          }
+        });
+        
+        // Intersection Observer para vídeos desktop
+        const videoObserverOptions = {
+          threshold: 0.1,
+          rootMargin: "500px",
+        };
+        
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const video = entry.target;
+              
+              // Pular se já foi carregado
+              if (video.querySelector("source")) {
+                return;
+              }
+              
+              const src = videoSources.get(video);
+              if (src) {
+                const sourceEl = document.createElement("source");
+                sourceEl.src = src;
+                sourceEl.type = "video/mp4";
+                video.appendChild(sourceEl);
+                video.load();
+                video.play().catch(() => {});
+              }
+              
+              videoObserver.unobserve(video);
+            }
+          });
+        }, videoObserverOptions);
+        
+        // Observar vídeos que não são do carousel
+        allVideos.forEach((video) => {
+          if (!video.closest("#motion-carousel-track")) {
+            videoObserver.observe(video);
+          }
+        });
+
         const observerOptions = {
           threshold: 0.15,
           rootMargin: "0px 0px -50px 0px",
@@ -966,23 +1023,16 @@
           });
 
           const setupMotionVideos = () => {
+            // Apenas manter referencias dos vídeos visíveis
             const videos = motionTrack.querySelectorAll("video");
             videos.forEach((video) => {
               video.muted = true;
-              video.autoplay = true;
               video.loop = true;
               video.playsInline = true;
               video.setAttribute("muted", "");
-              video.setAttribute("autoplay", "");
               video.setAttribute("loop", "");
               video.setAttribute("playsinline", "");
               video.setAttribute("webkit-playsinline", "");
-              video.preload = "auto";
-
-              const playPromise = video.play();
-              if (playPromise && typeof playPromise.catch === "function") {
-                playPromise.catch(() => {});
-              }
             });
           };
 
@@ -1000,6 +1050,8 @@
           recalculateLoopWidth();
           motionCarousel.scrollLeft = 0;
 
+          let isResetting = false;
+
           const loopMotionCarousel = (timestamp) => {
             if (!lastTimestamp) {
               lastTimestamp = timestamp;
@@ -1008,11 +1060,18 @@
             const deltaTime = Math.min(timestamp - lastTimestamp, 32);
             lastTimestamp = timestamp;
 
-            if (!paused && halfTrackWidth > 0) {
+            if (!paused && halfTrackWidth > 0 && !isResetting) {
               motionCarousel.scrollLeft += (pixelsPerSecond * deltaTime) / 1000;
 
-              if (motionCarousel.scrollLeft >= halfTrackWidth) {
-                motionCarousel.scrollLeft -= halfTrackWidth;
+              // Reset suave: voltar para posição 1 em vez de 0 para evitar jank
+              if (motionCarousel.scrollLeft >= halfTrackWidth - 1) {
+                isResetting = true;
+                // Fazer reset no próximo frame para suavizar
+                requestAnimationFrame(() => {
+                  motionCarousel.scrollLeft = 1;
+                  lastTimestamp = timestamp;
+                  isResetting = false;
+                });
               }
             }
 
@@ -1051,7 +1110,7 @@
             }
           });
 
-          requestAnimationFrame(loopMotionCarousel);
+          // Loop automático desabilitado - apenas scroll manual
         }
       });
 
