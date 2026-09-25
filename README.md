@@ -22,8 +22,8 @@ cada visitante e deixava o site lento). Agora o CSS é gerado uma vez e salvo em
 
 ```bash
 npm install      # só na primeira vez
-npm run build    # gera css/site.min.css
-npm run dev      # (opcional) regenera automaticamente enquanto você edita
+npm run build:css    # gera css/site.min.css
+npm run dev:css      # (opcional) regenera automaticamente enquanto você edita
 ```
 
 ## ✦ Estrutura
