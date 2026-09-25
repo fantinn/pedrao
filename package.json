@@ -3,8 +3,8 @@
   "private": true,
   "description": "Landing page pdrdesign — CSS gerado com Tailwind (antes era compilado no navegador via CDN).",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./css/site.min.css --minify",
-    "dev": "tailwindcss -i ./src/input.css -o ./css/site.min.css --watch"
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/site.min.css --minify",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./css/site.min.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17"
